@@ -83,9 +83,9 @@ class Calibrate(EuroPiScript):
         readings = []
         if chosen_process == 1:
             readings.append(wait_for_voltage(0))
-            readings.append(wait_for_voltage(10))
+            readings.append(wait_for_voltage(5))
         else:
-            for voltage in range(11):
+            for voltage in range(6):
                 readings.append(wait_for_voltage(voltage))
 
         with open(f"lib/calibration_values.py", "w") as file:
@@ -100,9 +100,9 @@ class Calibrate(EuroPiScript):
 
         if chosen_process == 1:
             new_readings = [readings[0]]
-            m = (readings[1] - readings[0]) / 10
+            m = (readings[1] - readings[0]) / 5
             c = readings[0]
-            for x in range(1, 10):
+            for x in range(1, 5):
                 new_readings.append(round((m * x) + c))
             new_readings.append(readings[1])
             readings = new_readings
@@ -114,7 +114,7 @@ class Calibrate(EuroPiScript):
         for index, expected_reading in enumerate(readings[1:]):
             while abs(reading - expected_reading) > 0.002 and reading < expected_reading:
                 cv1.duty_u16(duty)
-                duty += 10
+                duty += 5
                 reading = sample()
             output_duties.append(duty)
             oled.centre_text(f"Calibrating...\n{index+1}V")
