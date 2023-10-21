@@ -53,7 +53,7 @@ class MasterClockInner(EuroPiScript):
         self.MIN_BPM = 20  # Successfully calibrated to >= 20 and <= 240 BPM
         self.MAX_BPM = 240
         self.MIN_PULSE_WIDTH = 8
-        self.MIN_AIN_VOLTAGE = 1.1
+        self.MIN_AIN_VOLTAGE = 1.7
         self.MAX_DIVISION = 128
         self.MAX_PW_PERCENTAGE = 80
         self.CLOCKS_PER_QUARTER_NOTE = 4
