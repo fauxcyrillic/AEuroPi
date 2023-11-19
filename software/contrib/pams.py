@@ -608,7 +608,7 @@ class PamsOutput:
         self.phase = Setting("Phase", "phase", PERCENT_RANGE, PERCENT_RANGE, default_value=0)
 
         ## The amplitude of the output as a [0, 100] percentage
-        self.amplitude = Setting("Ampl.", "ampl", PERCENT_RANGE, PERCENT_RANGE, default_value=50)
+        self.amplitude = Setting("Ampl.", "ampl", PERCENT_RANGE, PERCENT_RANGE, default_value=100) # changed default because 50 percent is only 2.5v for AE, causing missed triggers
 
         ## Wave width
         self.width = Setting("Width", "width", PERCENT_RANGE, PERCENT_RANGE, default_value=50)
