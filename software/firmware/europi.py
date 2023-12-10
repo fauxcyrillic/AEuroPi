@@ -292,7 +292,7 @@ class Knob(AnalogueReader):
     would only return values which go up in steps of 2.
     """
 
-    def __init__(self, pin, deadzone=0.03):
+    def __init__(self, pin, deadzone=0.05):
         super().__init__(pin, deadzone=deadzone)
 
     def percent(self, samples=None, deadzone=None):
