@@ -227,7 +227,7 @@ class HarmonicLFOs(EuroPiScript):
         for cv, multiplier in zip(cvs, self.divisions):
             volts = self.calculate_voltage(cv, multiplier)
             cv.voltage(volts)
-            oled.pixel(self.pixel_x, self.pixel_y - int(volts * (self.pixel_y / 10)), 1)
+            oled.pixel(self.pixel_x, self.pixel_y - int(volts * (self.pixel_y / MAX_VOLTAGE)), 1)
 
     def check_change_clock_division(self):
         """Change current LFO's division with knob movement detection"""
