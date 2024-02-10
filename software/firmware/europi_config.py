@@ -74,17 +74,17 @@ class EuroPiConfig:
             ),
             configuration.integer(
                 name="max_output_voltage",
-                range=range(1, 11),
-                default=10
+                range=range(1, 6),
+                default=5
             ),
             configuration.integer(
                 name="max_input_voltage",
-                range=range(1, 13),
-                default=12
+                range=range(1, 6),
+                default=5
             ),
             configuration.integer(
                 name="gate_voltage",
-                range=range(1, 13),
+                range=range(1, 6),
                 default=5
             ),
         ]
